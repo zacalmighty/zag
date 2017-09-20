@@ -1,0 +1,329 @@
+body {
+    margin: 0;
+    background: #F6F6F6;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Toggle Switch Globals*/
+
+.hamburger-icon {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 90px;
+    height: 80px;
+    font-size: 0;
+    text-indent: -9999px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: background 0s;
+    transition: background 0s;
+}
+
+.hamburger-icon:focus {
+    outline: none;
+}
+
+.hamburger-icon span {
+    display: block;
+    position: absolute;
+    top: 29px;
+    left: 24px;
+    right: 24px;
+    height: 2px;
+}
+
+.hamburger-icon span::before,
+.hamburger-icon span::after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    content: "";
+}
+
+.hamburger-icon span::before {
+    top: -8px;
+}
+
+.hamburger-icon span::after {
+    bottom: -8px;
+}
+
+Hamburger Icon to (X) Close Icon .htx span {
+    -webkit-transition: background 0s 0s;
+    transition: background 0s 0;
+}
+
+.htx span::before,
+.htx span::after {
+    -webkit-transition-duration: 0s, 0s;
+    transition-duration: 0s, 0s;
+    -webkit-transition-delay: 0s, 0s;
+    transition-delay: 0s, 0s;
+}
+
+.htx span::before {
+    -webkit-transition-property: top, -webkit-transform;
+    transition-property: top, -webkit-transform;
+    transition-property: top, transform;
+    transition-property: top, transform, -webkit-transform;
+}
+
+.htx span::after {
+    -webkit-transition-property: bottom, -webkit-transform;
+    transition-property: bottom, -webkit-transform;
+    transition-property: bottom, transform;
+    transition-property: bottom, transform, -webkit-transform;
+}
+
+
+/* Left Nav - active state, i.e. menu open */
+
+html.slideout-open .fixed-open-left #left-nav.hamburger-icon.htx span {
+    background: none;
+}
+
+html.slideout-open .fixed-open-left #left-nav.hamburger-icon.htx span::before {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+html.slideout-open .fixed-open-left #left-nav.hamburger-icon.htx span::after {
+    bottom: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+html.slideout-open .fixed-open-left #left-nav.hamburger-icon.htx span::before,
+html.slideout-open .fixed-open-left #left-nav.hamburger-icon.htx span::after {
+    -webkit-transition-delay: 0s, 0s;
+    transition-delay: 0s, 0s;
+}
+
+
+/* Header Styles*/
+
+.hamburger-icon span,
+.hamburger-icon span::before,
+.hamburger-icon span::after {
+    background-color: #7386D5;
+}
+
+
+/* Slideout Styles*/
+
+#left-nav {
+    float: left;
+}
+
+.nav-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 45px;
+    background: #6d7fcd;
+    text-align: center;
+}
+
+.nav-header img {
+    flex-shrink: 0;
+    min-width: 120%;
+}
+
+#left-menu ul li a {
+    padding: 12px;
+    font-size: 25px;
+    display: block;
+    text-align: center;
+    color: #f6f6f6;
+    text-decoration: none;
+}
+
+@media (min-width: 1500px) {
+    .nav-header {
+        padding: 65px;
+    }
+    .nav-header img {
+        min-width: 160%;
+    }
+    #left-menu .nav-item a {
+        padding: 35px;
+    }
+}
+
+#left-menu ul li a:hover {
+    background: #f6f6f6;
+    color: #7386D5;
+}
+
+#left-menu ul li a i {
+    display: block;
+}
+
+.slideout-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    width: 256px;
+    overflow-y: auto;
+    display: none;
+    background: #7386D5;
+}
+
+.active {
+    color: #7386D5 !important;
+    background-color: #f6f6f6 !important;
+}
+
+.social {
+    padding-left: 15px;
+    display: flex;
+}
+
+.social .fa {
+    font-size: 20px;
+    padding-left: 8px;
+}
+
+@media (min-height: 600px) {
+    .social {
+        bottom: 0px;
+        position: absolute;
+    }
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open {
+    overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+    display: block;
+}
+
+.fixed {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: fixed;
+    z-index: 2;
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: -webkit-transform 300ms ease;
+    transition: transform 300ms ease;
+    transition: transform 300ms ease, -webkit-transform 300ms ease;
+}
+
+.fixed.fixed-open-left {
+    -webkit-transform: translate3d(256px, 0px, 0px);
+    transform: translate3d(256px, 0px, 0px);
+}
+
+
+/*Home*/
+
+.intro-text h1 {
+    font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+    .intro-text h1 {
+        font-size: 2.25em;
+    }
+}
+
+.intro-text .outer-line {
+    width: 30%;
+    border-bottom: 3px solid #7386D5;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.underline {
+    font-size: 1.75em;
+}
+
+@media (max-width: 300px) {
+    .outer-line {
+        width: 15%;
+    }
+}
+
+@media (max-width: 300px) {
+    .size {
+        font-size: 90%;
+    }
+}
+
+.description {
+    font-size: 28px;
+}
+
+@media (max-width: 800px) {
+    .description {
+        font-size: 18px;
+    }
+}
+
+
+/*Contact*/
+
+.contact {
+    padding: 30px;
+}
+
+.floating-label-form-group {
+    position: relative;
+    margin-bottom: 0;
+    border-bottom: 3px solid #eeeeee;
+}
+
+.floating-label-form-group input,
+.floating-label-form-group textarea {
+    z-index: 1;
+    position: relative;
+    padding-right: 0;
+    padding-left: 0;
+    border: none;
+    border-radius: 0;
+    font-size: 1.75em;
+    background: none;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    resize: none;
+}
+
+.floating-label-form-group:not(:first-child) {
+    padding-left: 14px;
+    border-left: 1px solid #eeeeee;
+}
+
+form .row:first-child .floating-label-form-group {
+    border-top: 1px solid #eeeeee;
+}
+
+
+/*Portfolio*/
+
+.portfolio {
+    margin: -20px;
+}
+
+.portfolio a {
+    text-decoration: none;
+}
